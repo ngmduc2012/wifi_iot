@@ -1250,7 +1250,7 @@ public class WifiIotPlugin
         }
 
         final int status = moWiFi.addNetworkSuggestions(networkSuggestions);
-        Log.e(WifiIotPlugin.class.getSimpleName(), "status: " + status);
+//        Log.e(WifiIotPlugin.class.getSimpleName(), "status: " + status);
 
         handler.post(
             new Runnable() {
@@ -1288,7 +1288,7 @@ public class WifiIotPlugin
         final NetworkRequest networkRequest =
             new NetworkRequest.Builder()
                 .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-//                .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
                 .setNetworkSpecifier(builder.build())
                 .build();
 
